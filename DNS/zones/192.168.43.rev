@@ -1,0 +1,15 @@
+$TTL	604800
+@	IN	SOA	server.flavian.local. root.flavian.local. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+	IN	NS	server.flavian.local.
+
+169	IN	PTR	flavian.local.
+169	IN	PTR	mail.flavian.local.
+169	IN	PTR	server.flavian.local.
+169	IN	PTR	www.flavian.local.
+169	IN	PTR	ftp.flavian.local.

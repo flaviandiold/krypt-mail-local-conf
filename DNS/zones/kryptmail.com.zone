@@ -1,0 +1,26 @@
+$TTL    604800
+@       IN      SOA     server.kryptmail.com. root.kryptmail.com. (
+                              3         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      server.kryptmail.com.
+@       IN      A       192.168.43.212
+
+; MX record for mail server
+@       IN      MX 10   mail.kryptmail.com.
+mail    IN      A       192.168.43.212
+
+; A records for server
+server  IN      A       192.168.43.212
+www     IN      CNAME   server.kryptmail.com.
+ftp     IN      CNAME   server.kryptmail.com.
+
+; Additional A records for SMTP and IMAP subdomains
+smtp.mail IN    A       192.168.43.212
+imap.mail IN    A       192.168.43.212
+
+; DKIM record
+default._domainkey.kryptmail.com IN TXT "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC+IO1aYvUxSQXzCt3dCCReNiabjv80iD4/dpz5v4LPKHsKgHQSTw4APvvOZv7EgFzoeQD51P7MFc0S9RLcvZSrurcQl2GehEL6/sab4AVf2XiVNznJgetGtukZpSTOJ6+OAnSasUtRG4sUAG4HSEtWCzRA+sbYjd2ZBnKpEIaxEQIDAQAB"

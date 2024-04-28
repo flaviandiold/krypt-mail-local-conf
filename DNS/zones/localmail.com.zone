@@ -1,0 +1,26 @@
+$TTL    604800
+@       IN      SOA     server.localmail.com. root.localmail.com. (
+                              3         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      server.localmail.com.
+@       IN      A       192.168.43.222
+
+; MX record for mail server
+@       IN      MX 10   mail.localmail.com.
+mail    IN      A       192.168.43.222
+
+; A records for server
+server  IN      A       192.168.43.222
+www     IN      CNAME   server.localmail.com.
+ftp     IN      CNAME   server.localmail.com.
+
+; Additional A records for SMTP and IMAP subdomains
+smtp.mail IN    A       192.168.43.222
+imap.mail IN    A       192.168.43.222
+
+; DKIM record
+default._domainkey.localmail.com IN TXT "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC2DGrl6huLFBzu5CdYhUD9/Fq9Xi1k40yEKlzRnKr7etDbvAyHEzL7C0SFPnPXAuqkCYQMeigOYbYjl/m2opcksjOPFVOP/T0X7e4XqUnpE/9x8cBc7wNGlfHB6YiwAF/lN4ts2vY4LFKWgW1Q06h6PBNnmdfWtnwvfDT/n4gD3QIDAQAB"
